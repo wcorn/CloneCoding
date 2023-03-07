@@ -1,7 +1,7 @@
 package com.base.project.global.config.SecurityConfig.jwt;
 
-import com.base.project.domain.user.dto.response.AccessTokenDto;
-import com.base.project.domain.user.repository.UserRepository;
+import com.base.project.domain.member.dto.response.AccessTokenDto;
+import com.base.project.domain.member.repository.MemberRepository;
 import com.base.project.global.common.api.ApiResponse;
 import com.base.project.global.common.api.ResponseCode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -21,7 +21,7 @@ import java.io.IOException;
 public class JwtAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
     private final JwtTokenProvider jwtTokenProvider;
 
-    private final UserRepository userRepository;
+    private final MemberRepository userRepository;
 
     private final ObjectMapper objectMapper;
 

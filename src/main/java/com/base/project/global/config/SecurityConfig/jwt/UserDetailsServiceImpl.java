@@ -1,8 +1,8 @@
 package com.base.project.global.config.SecurityConfig.jwt;
 
 
-import com.base.project.domain.user.entity.UserAccount;
-import com.base.project.domain.user.repository.UserRepository;
+import com.base.project.domain.member.entity.Member;
+import com.base.project.domain.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
@@ -18,11 +18,11 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    private final UserRepository userRepository;
+    private final MemberRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) {
-        Optional<UserAccount> userAccount = userRepository.findById(Long.parseLong(username));
+        Optional<Member> userAccount = userRepository.findById(Long.parseLong(username));
         return User.withUsername(username)
                 .password(userAccount.get().getPassword())
                 .authorities(AuthorityUtils.NO_AUTHORITIES)

@@ -1,4 +1,4 @@
-package com.base.project.global.common.api;
+package com.base.project.global.error;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +14,7 @@ public enum ErrorCode {
     UNAUTHORIZED(HttpStatus.UNAUTHORIZED, "접근 권한이 없는 유저입니다."),
     //test
     TEST(HttpStatus.BAD_REQUEST,"에러 테스트"),
-    //user
+    //member
     PASSWORD_ENCRYPTION_ERROR(HttpStatus.CONFLICT, "비밀번호 암호화에 실패하였습니다."),
     DUPLICATED_EMAIL(HttpStatus.CONFLICT, "중복된 이메일 입니다."),
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 유저입니다."),

@@ -1,5 +1,6 @@
-package com.base.project.global.common.api;
+package com.base.project.global.error;
 
+import com.base.project.global.error.ErrorCode;
 import lombok.Getter;
 
 import java.time.LocalDateTime;

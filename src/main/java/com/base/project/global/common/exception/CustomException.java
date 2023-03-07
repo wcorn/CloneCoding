@@ -1,6 +1,6 @@
 package com.base.project.global.common.exception;
 
-import com.base.project.global.common.api.ErrorCode;
+import com.base.project.global.error.ErrorCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

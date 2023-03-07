@@ -1,7 +1,7 @@
 package com.base.project.global.config.SecurityConfig.jwt;
 
-import com.base.project.global.common.api.ErrorCode;
-import com.base.project.global.common.api.ErrorResponse;
+import com.base.project.global.error.ErrorCode;
+import com.base.project.global.error.ErrorResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

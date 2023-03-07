@@ -1,4 +1,4 @@
-package com.base.project.domain.user.entity;
+package com.base.project.domain.member.entity;
 
 import com.base.project.global.common.entity.BaseEntity;
 import lombok.Getter;
@@ -18,7 +18,7 @@ import static lombok.AccessLevel.PROTECTED;
 @SuperBuilder
 @NoArgsConstructor(access = PROTECTED)
 @ToString
-public class UserAccount extends BaseEntity {
+public class Member extends BaseEntity {
     String email;
     String password;
     String name;
@@ -28,7 +28,7 @@ public class UserAccount extends BaseEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UserAccount that = (UserAccount) o;
+        Member that = (Member) o;
         return email.equals(that.email);
     }
 

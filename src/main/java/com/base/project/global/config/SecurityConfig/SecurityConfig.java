@@ -29,7 +29,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 public class SecurityConfig {
 
     private static final String[] POST_PERMITTED_URLS = {
-            "/api/user/signup", "/api/user/login"
+            "/api/member/signup", "/api/member/login"
     };
 
     @Bean

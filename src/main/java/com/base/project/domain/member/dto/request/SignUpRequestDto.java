@@ -1,4 +1,4 @@
-package com.base.project.domain.user.dto.request;
+package com.base.project.domain.member.dto.request;
 
 import lombok.*;
 

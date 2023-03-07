@@ -1,4 +1,4 @@
-package com.base.project.domain.user.dto.response;
+package com.base.project.domain.member.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +9,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AccessTokenDto {
-    String token;
+public class LogInResponseDto {
+    String jwt;
 }

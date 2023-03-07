@@ -1,7 +1,8 @@
-package com.base.project.global.common.exception;
+package com.base.project.global.error;
 
-import com.base.project.global.common.api.ErrorCode;
-import com.base.project.global.common.api.ErrorResponse;
+import com.base.project.global.common.exception.CustomException;
+import com.base.project.global.error.ErrorCode;
+import com.base.project.global.error.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.HttpRequestMethodNotSupportedException;

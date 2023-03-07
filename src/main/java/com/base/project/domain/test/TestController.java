@@ -1,7 +1,7 @@
 package com.base.project.domain.test;
 
 import com.base.project.global.common.api.ApiResponse;
-import com.base.project.global.common.api.ErrorCode;
+import com.base.project.global.error.ErrorCode;
 import com.base.project.global.common.api.ResponseCode;
 import com.base.project.global.common.exception.CustomException;
 import lombok.RequiredArgsConstructor;

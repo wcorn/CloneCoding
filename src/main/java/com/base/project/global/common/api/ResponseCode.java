@@ -9,10 +9,10 @@ import org.springframework.http.HttpStatus;
 public enum ResponseCode {
     //TEST
     TEST(HttpStatus.OK, "TEST 입니다"),
-    // user
+    // member
     USER_SIGNUP(HttpStatus.CREATED,"회원 가입에 성공하였습니다."),
     USER_LOGIN(HttpStatus.OK,"로그인에 성공하였습니다.");
-    // user
+    // member
     private final HttpStatus status;
     private final String message;
 
