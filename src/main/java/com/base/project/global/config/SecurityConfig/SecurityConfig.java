@@ -19,6 +19,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -28,8 +29,8 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    private static final String[] POST_PERMITTED_URLS = {
-            "/api/member/signup", "/api/member/login"
+    private static final String[] PERMITTED_URLS = {
+            "/api/member/signup", "/api/member/login", "/h2-console/**"
     };
 
     @Bean
@@ -55,11 +56,12 @@ public class SecurityConfig {
                 .exceptionHandling(config -> config
                         .authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 )
-                .authorizeRequests(antz -> antz
-                        .antMatchers(HttpMethod.POST, POST_PERMITTED_URLS).permitAll()
-                        .antMatchers("/v3/api-docs/**").permitAll()
+                .authorizeRequests(ant -> ant
+                        .antMatchers(PERMITTED_URLS).permitAll()
                         .anyRequest().authenticated()
-                );
+                )
+                .headers().addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN))
+                .and();
         return http.build();
     }
 
@@ -95,8 +97,4 @@ public class SecurityConfig {
         return new JwtAuthenticationCheckFilter(jwtTokenProvider);
     }
 
-    @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-        return web -> web.ignoring().antMatchers("/swagger-ui/**");
-    }
 }
