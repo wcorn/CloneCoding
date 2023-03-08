@@ -1,39 +1,76 @@
 package com.base.project.domain.member.entity;
 
+import com.base.project.domain.authorization.entity.Login;
+import com.base.project.domain.authorization.entity.SelfLogin;
+import com.base.project.domain.comunity.entity.*;
 import com.base.project.global.common.entity.BaseEntity;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Entity;
-import java.util.Objects;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static lombok.AccessLevel.PROTECTED;
 
 @Entity
 @Getter
-@Setter
 @SuperBuilder
 @NoArgsConstructor(access = PROTECTED)
-@ToString
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Member extends BaseEntity {
-    String email;
-    String password;
-    String name;
-    int age;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Member that = (Member) o;
-        return email.equals(that.email);
-    }
+    private String email;
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
+    private String password;
+
+    private String name;
+
+    private int age;
+
+    @OneToOne(mappedBy = "member")
+    private Login login;
+
+    @OneToOne(mappedBy = "member")
+    private SelfLogin selfLogin;
+
+    @OneToMany(mappedBy = "member")
+    @Builder.Default
+    @ToString.Exclude
+    private List<Board> boards = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "school_id")
+    private School school;
+
+    @OneToMany(mappedBy = "member")
+    @Builder.Default
+    @ToString.Exclude
+    private List<Post> posts = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    @Builder.Default
+    @ToString.Exclude
+    private List<PostLike> postLikes = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    @Builder.Default
+    @ToString.Exclude
+    private List<FavoriteBoard> favoriteBoards = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    @Builder.Default
+    @ToString.Exclude
+    private List<Scrap> scraps = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    @Builder.Default
+    @ToString.Exclude
+    private List<Comment> comments = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    @Builder.Default
+    @ToString.Exclude
+    private List<CommentLike> commentLikes = new ArrayList<>();
 }

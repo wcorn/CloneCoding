@@ -28,8 +28,8 @@ public class BaseEntity {
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
     @CreatedDate
-    private LocalDateTime createDate;
+    private LocalDateTime createdDate;
     @LastModifiedDate
-    private LocalDateTime modifyDate;
+    private LocalDateTime updatedDate;
 
 }

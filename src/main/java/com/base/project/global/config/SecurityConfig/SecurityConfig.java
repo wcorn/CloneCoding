@@ -60,8 +60,8 @@ public class SecurityConfig {
                         .antMatchers(PERMITTED_URLS).permitAll()
                         .anyRequest().authenticated()
                 )
-                .headers().addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN))
-                .and();
+                .headers()
+                .addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN));
         return http.build();
     }
 
