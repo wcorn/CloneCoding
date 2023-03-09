@@ -5,16 +5,13 @@ import com.base.project.global.common.entity.BaseEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static lombok.AccessLevel.PROTECTED;
-
+import static javax.persistence.FetchType.LAZY;
 @Entity
 @Getter
 @SuperBuilder
@@ -27,15 +24,15 @@ public class Comment extends BaseEntity {
 
     boolean isAnonymous;
 
-    @ManyToOne
+    @ManyToOne(fetch= LAZY)
     @JoinColumn(name = "post_id")
     private Post post;
 
-    @ManyToOne
+    @ManyToOne(fetch= LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @ManyToOne
+    @ManyToOne(fetch= LAZY)
     @JoinColumn(name = "parent_id")
     private Comment parent;
 

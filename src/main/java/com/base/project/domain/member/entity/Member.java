@@ -11,6 +11,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static javax.persistence.FetchType.LAZY;
 import static lombok.AccessLevel.PROTECTED;
 
 @Entity
@@ -40,7 +41,7 @@ public class Member extends BaseEntity {
     @ToString.Exclude
     private List<Board> boards = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(fetch= LAZY)
     @JoinColumn(name = "school_id")
     private School school;
 

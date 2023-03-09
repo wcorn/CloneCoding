@@ -10,7 +10,7 @@ import lombok.experimental.SuperBuilder;
 import javax.persistence.*;
 
 import static lombok.AccessLevel.PROTECTED;
-
+import static javax.persistence.FetchType.LAZY;
 @Entity
 @Getter
 @SuperBuilder
@@ -24,11 +24,11 @@ public class Board extends BaseEntity {
     String description;
     boolean is_anonymous;
 
-    @ManyToOne
+    @ManyToOne(fetch= LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @ManyToOne
+    @ManyToOne(fetch= LAZY)
     @JoinColumn(name="school_id")
     private School school;
 

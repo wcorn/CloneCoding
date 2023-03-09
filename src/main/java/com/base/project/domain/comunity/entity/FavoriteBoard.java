@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
+import static javax.persistence.FetchType.LAZY;
 import static lombok.AccessLevel.PROTECTED;
 
 @Entity
@@ -22,12 +23,12 @@ import static lombok.AccessLevel.PROTECTED;
 public class FavoriteBoard implements Serializable {
 
     @Id
-    @ManyToOne
+    @ManyToOne(fetch= LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
 
     @Id
-    @ManyToOne
+    @ManyToOne(fetch= LAZY)
     @JoinColumn(name = "board_id")
     private Board board;
 }

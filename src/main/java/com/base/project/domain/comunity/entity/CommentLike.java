@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 
 import java.io.Serializable;
 
+import static javax.persistence.FetchType.LAZY;
 import static lombok.AccessLevel.PROTECTED;
 
 @Entity
@@ -23,12 +24,12 @@ import static lombok.AccessLevel.PROTECTED;
 public class CommentLike implements Serializable {
 
     @Id
-    @ManyToOne
+    @ManyToOne(fetch= LAZY)
     @JoinColumn(name = "comment_id")
     private Comment comment;
 
     @Id
-    @ManyToOne
+    @ManyToOne(fetch= LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
 }

@@ -10,6 +10,7 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 
+import static javax.persistence.FetchType.LAZY;
 import static lombok.AccessLevel.PROTECTED;
 
 @Entity
@@ -20,12 +21,12 @@ import static lombok.AccessLevel.PROTECTED;
 public class Scrap implements Serializable {
 
     @Id
-    @ManyToOne
+    @ManyToOne(fetch= LAZY)
     @JoinColumn(name="member_id")
     private Member member;
 
     @Id
-    @ManyToOne
+    @ManyToOne(fetch= LAZY)
     @JoinColumn(name="post_id")
     private Post post;
 }
