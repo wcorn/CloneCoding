@@ -1,4 +1,4 @@
-package com.base.project.domain.comunity.entity;
+package com.base.project.domain.comunity.domain;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;

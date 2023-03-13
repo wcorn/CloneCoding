@@ -1,15 +1,12 @@
-package com.base.project.domain.comunity.entity;
+package com.base.project.domain.comunity.domain;
 
-import com.base.project.domain.member.entity.Member;
+import com.base.project.domain.member.domain.Member;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 import java.io.Serializable;
 
@@ -21,15 +18,14 @@ import static lombok.AccessLevel.PROTECTED;
 @SuperBuilder
 @NoArgsConstructor(access = PROTECTED)
 @ToString(callSuper = true)
-public class CommentLike implements Serializable {
-
-    @Id
-    @ManyToOne(fetch= LAZY)
-    @JoinColumn(name = "comment_id")
-    private Comment comment;
-
+public class PostLike implements Serializable {
     @Id
     @ManyToOne(fetch= LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
+
+    @Id
+    @ManyToOne(fetch= LAZY)
+    @JoinColumn(name = "post_id")
+    private Post post;
 }

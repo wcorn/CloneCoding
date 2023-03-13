@@ -1,4 +1,4 @@
-package com.base.project.global.config.SecurityConfig.jwt;
+package com.base.project.global.config.securityConfig.jwt;
 
 import com.base.project.domain.member.dto.response.AccessTokenDto;
 import com.base.project.domain.member.repository.MemberRepository;

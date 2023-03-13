@@ -1,13 +1,15 @@
-package com.base.project.domain.comunity.entity;
+package com.base.project.domain.comunity.domain;
 
-import com.base.project.domain.member.entity.Member;
+import com.base.project.domain.member.domain.Member;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
-
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
 import static javax.persistence.FetchType.LAZY;
@@ -18,7 +20,8 @@ import static lombok.AccessLevel.PROTECTED;
 @SuperBuilder
 @NoArgsConstructor(access = PROTECTED)
 @ToString(callSuper = true)
-public class PostLike implements Serializable {
+public class FavoriteBoard implements Serializable {
+
     @Id
     @ManyToOne(fetch= LAZY)
     @JoinColumn(name = "member_id")
@@ -26,6 +29,6 @@ public class PostLike implements Serializable {
 
     @Id
     @ManyToOne(fetch= LAZY)
-    @JoinColumn(name = "post_id")
-    private Post post;
+    @JoinColumn(name = "board_id")
+    private Board board;
 }

@@ -1,19 +1,17 @@
-package com.base.project.global.config.SecurityConfig;
+package com.base.project.global.config.securityConfig;
 
 
-import com.base.project.global.config.SecurityConfig.jwt.JwtAuthenticationCheckFilter;
-import com.base.project.global.config.SecurityConfig.jwt.JwtAuthenticationEntryPoint;
-import com.base.project.global.config.SecurityConfig.jwt.JwtTokenProvider;
+import com.base.project.global.config.securityConfig.jwt.JwtAuthenticationCheckFilter;
+import com.base.project.global.config.securityConfig.jwt.JwtAuthenticationEntryPoint;
+import com.base.project.global.config.securityConfig.jwt.JwtTokenProvider;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.authentication.AuthenticationManagerFactoryBean;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

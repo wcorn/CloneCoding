@@ -1,6 +1,6 @@
-package com.base.project.domain.authorization.entity;
+package com.base.project.domain.authorization.domain;
 
-import com.base.project.domain.member.entity.Member;
+import com.base.project.domain.member.domain.Member;
 import com.base.project.global.common.entity.BaseEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -18,13 +18,16 @@ import static lombok.AccessLevel.PROTECTED;
 @NoArgsConstructor(access = PROTECTED)
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class Login extends BaseEntity {
-
-    private String authType;
-
-    private String authId;
+public class PasswordLogin extends BaseEntity {
 
     @OneToOne
     @JoinColumn(name = "member_id")
-    private Member member;
+    Member member;
+
+    String email;
+
+    String salt;
+
+    String password;
+
 }

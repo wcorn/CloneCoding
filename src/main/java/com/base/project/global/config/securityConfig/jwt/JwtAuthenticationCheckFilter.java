@@ -1,4 +1,4 @@
-package com.base.project.global.config.SecurityConfig.jwt;
+package com.base.project.global.config.securityConfig.jwt;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

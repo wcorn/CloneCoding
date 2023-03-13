@@ -1,6 +1,6 @@
-package com.base.project.domain.comunity.entity;
+package com.base.project.domain.comunity.domain;
 
-import com.base.project.domain.member.entity.Member;
+import com.base.project.domain.member.domain.Member;
 import com.base.project.global.common.entity.BaseEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;

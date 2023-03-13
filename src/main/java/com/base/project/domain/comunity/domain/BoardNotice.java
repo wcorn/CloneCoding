@@ -1,6 +1,5 @@
-package com.base.project.domain.comunity.entity;
+package com.base.project.domain.comunity.domain;
 
-import com.base.project.domain.member.entity.Member;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -10,7 +9,6 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 
-import static javax.persistence.FetchType.LAZY;
 import static lombok.AccessLevel.PROTECTED;
 
 @Entity
@@ -18,15 +16,15 @@ import static lombok.AccessLevel.PROTECTED;
 @SuperBuilder
 @NoArgsConstructor(access = PROTECTED)
 @ToString(callSuper = true)
-public class Scrap implements Serializable {
+public class BoardNotice implements Serializable {
 
     @Id
-    @ManyToOne(fetch= LAZY)
-    @JoinColumn(name="member_id")
-    private Member member;
+    @OneToOne
+    @JoinColumn(name = "board_id")
+    private Board board;
 
     @Id
-    @ManyToOne(fetch= LAZY)
-    @JoinColumn(name="post_id")
+    @OneToOne
+    @JoinColumn(name = "post_id")
     private Post post;
 }
