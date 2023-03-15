@@ -33,6 +33,7 @@ public class Member extends BaseEntity {
 
     @OneToOne(mappedBy = "member")
     private Profile profile;
+
     @OneToMany(mappedBy = "member")
     @Builder.Default
     @ToString.Exclude
@@ -67,5 +68,20 @@ public class Member extends BaseEntity {
     @Builder.Default
     @ToString.Exclude
     private List<CommentLike> commentLikes = new ArrayList<>();
+
+
+    //== Create Method ==//
+    public static Member createMember(){
+        Member member = Member.builder()
+                .role(Role.USER)
+                .build();
+        return member;
+    }
+    public static Member createAdmin(){
+        Member member = Member.builder()
+                .role(Role.ADMIN)
+                .build();
+        return member;
+    }
 
 }
