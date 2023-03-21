@@ -2,13 +2,13 @@ server:
   port: 9000
 spring:
   datasource:
-    url: jdbc:h2:mem:test
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: ENC(iQCjR5eW3Sroz67jpOXfAiXaAHqKL4pZyw0sRCOTKZSRCvJ/QwDAztMv+VL+wqyV3/TPeS6PTzcMpuWBOZAWyNoK0mglB4Y5KZWRCc8YSbXrMq6znXV9D7PyPjhOi82v0+v0SuAX4nW/b3pGBMPESGPUvmqjX6g0WeWEilb0Kb6ZwOiwUy7RnA==)
+    username: ENC(yhqGZ4/qD/zLsP6OinCDRA==)
+    password: ENC(oVn/Ms6fu1fRBuNHUyG+QGcVR5nS6KKj//MbXkSqq/k=)
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
   mvc:
     path match:
       matching-strategy: ant_path_matcher
@@ -18,4 +18,3 @@ logging:
 jasypt:
   encryptor:
     bean: jasyptStringEncryptor
-    password: password

@@ -1,9 +1,9 @@
 package com.base.project.domain.tdd;
 
-import com.base.project.domain.tdd.Test.Bank;
-import com.base.project.domain.tdd.Test.Expression;
-import com.base.project.domain.tdd.Test.Money;
-import com.base.project.domain.tdd.Test.Sum;
+import com.base.project.tdd.domain.tdd.Test.Bank;
+import com.base.project.tdd.domain.tdd.Test.Expression;
+import com.base.project.tdd.domain.tdd.Test.Money;
+import com.base.project.tdd.domain.tdd.Test.Sum;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
